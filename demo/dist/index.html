@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="/demo.e3e918ca.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="panel-container">
+    <div class="top"></div>
+    <div class="middle panel">
+      <div class="left"></div>
+      <div class="middle">
+        Demo
+      </div>
+      <div class="right"></div>
+    </div>
+    <div class="bottom"></div>
+  </div>
+</body>
+
+<style>
+
+  .panel-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .top, .middle, .bottom {
+    flex: 1;
+  }
+
+  .left, .middle, .right {
+    flex: 1;
+  }
+
+</style>
+
+</html>
