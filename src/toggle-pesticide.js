@@ -1,9 +1,4 @@
 export const togglePesticide = function (context) {
-
-
-  console.log(document.getElementsByClassName('panel'));
-  console.log(document.getElementsByClassName('panel'));
-
   // Create the namespace if it's not created yet.
   if (!context.PESTICIDE) context.PESTICIDE = { isDebugging: false };
 
@@ -115,8 +110,6 @@ export const togglePesticide = function (context) {
     itemBorderColor,
     isDebugging = context.PESTICIDE.isDebugging;
 
-
-  console.log(document.getElementsByTagName('body')[0]);
   const all = document.body.getElementsByTagName('*');
 
 
@@ -127,7 +120,4 @@ export const togglePesticide = function (context) {
     // Apply the outline color to the element. If it's not in debug mode, it'll apply a transparent outline.
     item.style.outline = '1px solid ' + (!isDebugging ? itemBorderColor : 'transparent');
   }
-
-  // Toggle debugging flag.
-  // context.PESTICIDE.isDebugging = !isDebugging;
 };

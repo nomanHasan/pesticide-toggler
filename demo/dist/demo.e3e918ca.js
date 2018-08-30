@@ -110,10 +110,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var togglePesticide = exports.togglePesticide = function togglePesticide(context) {
-
-  console.log(document.getElementsByClassName('panel'));
-  console.log(document.getElementsByClassName('panel'));
-
   // Create the namespace if it's not created yet.
   if (!context.PESTICIDE) context.PESTICIDE = { isDebugging: false };
 
@@ -226,7 +222,6 @@ var togglePesticide = exports.togglePesticide = function togglePesticide(context
       itemBorderColor,
       isDebugging = context.PESTICIDE.isDebugging;
 
-  console.log(document.getElementsByTagName('body')[0]);
   var all = document.body.getElementsByTagName('*');
 
   for (; count < all.length; ++count) {
@@ -236,11 +231,8 @@ var togglePesticide = exports.togglePesticide = function togglePesticide(context
     // Apply the outline color to the element. If it's not in debug mode, it'll apply a transparent outline.
     item.style.outline = '1px solid ' + (!isDebugging ? itemBorderColor : 'transparent');
   }
-
-  // Toggle debugging flag.
-  // context.PESTICIDE.isDebugging = !isDebugging;
 };
-},{}],"../src/index.js":[function(require,module,exports) {
+},{}],"../index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -248,11 +240,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PesticideToggler = undefined;
 
-var _togglePesticide = require("./toggle-pesticide");
+var _togglePesticide = require("./src/toggle-pesticide");
 
 var PesticideToggler = exports.PesticideToggler = {
   activate: function activate() {
-    (0, _togglePesticide.togglePesticide)(window);
+    if (!window.PESTICIDE) window.PESTICIDE = { isDebugging: true };
 
     window.onkeypress = function (event) {
       if (event.code === 'KeyP') {
@@ -262,15 +254,15 @@ var PesticideToggler = exports.PesticideToggler = {
     };
   }
 };
-},{"./toggle-pesticide":"../src/toggle-pesticide.js"}],"index.js":[function(require,module,exports) {
+},{"./src/toggle-pesticide":"../src/toggle-pesticide.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
-var _index = require('../src/index');
+var _ = require('..');
 
 window.onload = function () {
-  _index.PesticideToggler.activate();
+  _.PesticideToggler.activate();
 };
-},{"../src/index":"../src/index.js"}],"../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"..":"../index.js"}],"../../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 

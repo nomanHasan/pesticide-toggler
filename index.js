@@ -1,8 +1,8 @@
-import { togglePesticide } from "./toggle-pesticide";
+import { togglePesticide } from "./src/toggle-pesticide";
 
 export const PesticideToggler = {
   activate: () => {
-    togglePesticide(window)
+    if (!window.PESTICIDE) window.PESTICIDE = { isDebugging: true };
 
     window.onkeypress = function (event) {
       if (event.code === 'KeyP') {

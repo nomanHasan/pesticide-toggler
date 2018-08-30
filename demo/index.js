@@ -1,4 +1,4 @@
-import {PesticideToggler} from '../src/index';
+import {PesticideToggler} from '..';
 
 window.onload = function() {
   PesticideToggler.activate();
